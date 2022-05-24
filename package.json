@@ -1,0 +1,34 @@
+{
+    "name": "exemplo-clean-architecture",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "npm run tsc && jest",
+        "tsc": "tsc --noEmit",
+        "tscWatch": "tsc --noEmit --watch",
+        "watch": "npm run tsc && jest --watch"
+    },
+    "engines": {
+        "node": "16"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@swc/cli": "^0.1.56",
+        "@swc/core": "^1.2.160",
+        "@swc/jest": "^0.2.20",
+        "@types/jest": "^27.4.1",
+        "jest": "^27.5.1",
+        "ts-node": "^10.7.0",
+        "tslint": "^6.1.3",
+        "typescript": "^4.6.2"
+    },
+    "dependencies": {
+        "reflect-metadata": "^0.1.13",
+        "sequelize": "^6.17.0",
+        "sequelize-typescript": "^2.1.3",
+        "sqlite3": "^5.0.2"
+    }
+}
