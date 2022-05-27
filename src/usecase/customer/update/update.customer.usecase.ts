@@ -2,7 +2,7 @@ import CustomerRepositoryInterface from '../../../domain/customer/repository/cus
 import Address from '../../../domain/customer/value-object/address';
 import { InputUpdateCustomerDto, OutputUpdateCustomerDto } from './update.customer.dto';
 
-export class UpdateCustomerUseCase {
+export default class UpdateCustomerUseCase {
     private customerRepository: CustomerRepositoryInterface;
 
     constructor(customerRepository: CustomerRepositoryInterface) {

@@ -1,5 +1,5 @@
 import CustomerRepositoryInterface from '../../../domain/customer/repository/customer-repository.interface';
-import { CreateCustomerUseCase } from './create.customer.usecase';
+import CreateCustomerUseCase from './create.customer.usecase';
 
 describe("Create Customer UseCase Unit Test", () => {
 

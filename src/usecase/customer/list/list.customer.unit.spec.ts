@@ -1,6 +1,6 @@
 import CustomerFactory from '../../../domain/customer/factory/customer.factory';
 import CustomerRepositoryInterface from '../../../domain/customer/repository/customer-repository.interface';
-import { ListCustomerUseCase } from './list.customer.usecase';
+import ListCustomerUseCase from './list.customer.usecase';
 
 describe('List Customer UseCase Unit Test', () => {
     const customer1 = CustomerFactory.createWithAddress(
