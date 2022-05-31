@@ -1,5 +1,5 @@
-import CustomerFactory from '../../../domain/customer/factory/customer.factory';
-import CustomerRepositoryInterface from '../../../domain/customer/repository/customer-repository.interface';
+import CustomerFactory from '@domain/customer/factory/customer.factory';
+import CustomerRepositoryInterface from '@domain/customer/repository/customer-repository.interface';
 import UpdateCustomerUseCase from './update.customer.usecase';
 
 describe("Update Customer UseCase Unit Test", () => {

@@ -1,5 +1,5 @@
-import CustomerFactory from '../../../domain/customer/factory/customer.factory';
-import CustomerRepositoryInterface from '../../../domain/customer/repository/customer-repository.interface';
+import CustomerFactory from '@domain/customer/factory/customer.factory';
+import CustomerRepositoryInterface from '@domain/customer/repository/customer-repository.interface';
 import { InputCreateCustomerDto, OutputCreateCustomerDto } from './create.customer.dto';
 
 export default class CreateCustomerUseCase {

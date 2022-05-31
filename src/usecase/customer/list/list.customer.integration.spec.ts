@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
-import CustomerFactory from '../../../domain/customer/factory/customer.factory';
-import CustomerModel from '../../../infrastructure/customer/repository/sequelize/customer.model';
-import CustomerRepository from '../../../infrastructure/customer/repository/sequelize/customer.repository';
+import CustomerFactory from '@domain/customer/factory/customer.factory';
+import CustomerModel from '@infrastructure/customer/repository/sequelize/customer.model';
+import CustomerRepository from '@infrastructure/customer/repository/sequelize/customer.repository';
 import ListCustomerUseCase from './list.customer.usecase';
 
 describe('List Customer UseCase Unit Test', () => {
