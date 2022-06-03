@@ -2,7 +2,7 @@ import { app, sequelize } from '../express';
 import resquest from 'supertest';
 
 
-describe('Customer e2e test', () => { 
+describe('Customer e2e test', () => {
 
     beforeEach(async () => {
         await sequelize.sync();
@@ -24,7 +24,7 @@ describe('Customer e2e test', () => {
                     city: 'Anytown'
                 }
             });
-        
+
         expect(response.status).toBe(200);
         expect(response.body.name).toBe('John Doe');
         expect(response.body.address.street).toBe('123 Main St');
@@ -32,4 +32,15 @@ describe('Customer e2e test', () => {
         expect(response.body.address.zipCode).toBe('12345');
         expect(response.body.address.city).toBe('Anytown');
     });
+
+    it('should not create a customer', async () => {
+        const response = await resquest(app)
+            .post('/customers')
+            .send({
+                name: 'John Doe'
+            });
+
+        expect(response.status).toBe(500);
+    });
+
 })
