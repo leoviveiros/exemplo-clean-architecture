@@ -1,7 +1,9 @@
 import CustomerAddressChangedEvent from '../event/customer-address-changed.event';
 import CustomerCreatedEvent from '../event/customer-created.event';
 import EventDispatcherInterface from '../../shared/event/event-dispatcher.interface';
+import Entity from '../../shared/entity/entity.abstract';
 import Address from '../value-object/address';
+import NotificationError from '../../shared/notification/notification.error';
 
 /*
 Complexidade de Negócio:
@@ -14,14 +16,14 @@ Complexidade Acidental
     - model
         - customer.ts (getters / setters)
 */
-export default class Customer {
-    private _id: string;
+export default class Customer extends Entity {
     private _name: string;
     private _address!: Address;
     private _active: boolean = false;
     private _rewardPoints: number = 0;
 
     constructor(id: string, name: string) {
+        super();
         this._id = id;
         this._name = name;
 
@@ -62,11 +64,21 @@ export default class Customer {
 
     validade() {
         if (!this._id || this._id.length === 0) {
-            throw new Error("Id is required");
+            this.notification.addError({
+                context: 'customer',
+                message: 'Id is required'
+            });
         }
 
         if (!this._name || this._name.length === 0) {
-            throw new Error("Name is required");
+            this.notification.addError({
+                context: 'customer',
+                message: 'Name is required'
+            });
+        }
+
+        if (this.notification.hasErrors()) {
+            throw new NotificationError(this.notification.errors);
         }
     }
 
@@ -91,10 +103,6 @@ export default class Customer {
 
     get address() {
         return this._address;
-    }
-
-    get id() {
-        return this._id;
     }
 
     get name() {
