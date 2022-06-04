@@ -1,4 +1,4 @@
-import Notification from '../notification/notification';
+import Notification, { NotificationErrorProps } from '../notification/notification';
 
 export default abstract class Entity {
     protected _id: string;
@@ -10,6 +10,10 @@ export default abstract class Entity {
 
     get id() {
         return this._id;
+    }
+
+    public addNotificationError(error: NotificationErrorProps) {
+        this.notification.addError(error);
     }
 
 }
